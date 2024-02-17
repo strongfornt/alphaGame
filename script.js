@@ -56,7 +56,8 @@ document.addEventListener("keyup", function (e) {
   if(playerPressed === 'Escape'){
     hideElement('play-ground');
     showElement('final-stage');
-    setTextElementValueById('final-score',updatedScore)
+    const currentScore = getTextElementValueByID("score");
+    setTextElementValueById('final-score',currentScore)
 }
   const displayAlphabet = document.getElementById("display-alphabet");
   const currentAlpha = displayAlphabet.innerText;
@@ -73,8 +74,9 @@ document.addEventListener("keyup", function (e) {
 
     if(updatedLife === 0){
         hideElement('play-ground');
-        showElement('final-stage')
-        setTextElementValueById('final-score',updatedScore)
+        showElement('final-stage');
+        const currentScore = getTextElementValueByID("score");
+        setTextElementValueById('final-score',currentScore)
     }
   }
 });
